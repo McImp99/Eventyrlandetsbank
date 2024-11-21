@@ -1,3 +1,5 @@
+package Bank;
+
 import Exceptions.AccountNotFoundException;
 import Exceptions.InsufficientFundsException;
 

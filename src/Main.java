@@ -1,3 +1,5 @@
+import Bank.BankSystem;
+
 public class Main {
     public static void main(String[] args) {
         BankSystem bankSystem = new BankSystem();
@@ -9,7 +11,7 @@ public class Main {
         //Using deposit method from Banksystem.java into the account created
         bankSystem.deposit("12345", 200.0);
 
-        //Using withdraw method from BankSystem.java
+        //Using withdraw method from Bank.BankSystem.java
         bankSystem.withdraw("12345", 150.0);
 
         //Using withdraw method, but to show InsufficientFundsException cause the amount is higher than the actual balance

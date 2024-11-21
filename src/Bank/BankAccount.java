@@ -1,3 +1,5 @@
+package Bank;
+
 import Exceptions.InsufficientFundsException;
 import Exceptions.InvalidAmountException;
 
