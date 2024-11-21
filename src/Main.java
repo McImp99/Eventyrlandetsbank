@@ -19,6 +19,15 @@ public class Main {
         bankSystem.withdraw("99999", 100.0);
 
 
+        //Using transfer method to show valid transfer
+        bankSystem.transfer("12345", "67890", 300);
+
+        //Using transfer method to show invalid transfer cause of funds
+        bankSystem.transfer("12345", "67890", 800);
+
+        //Using tranfer method to show AccountNotFound
+        bankSystem.transfer("12345", "63263", 300);
+
     } // main end
 }
 

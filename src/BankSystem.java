@@ -66,5 +66,33 @@ public class BankSystem {
             System.out.println("Insufficient funds: " + e.getMessage());
         }
     }
+
+    /*
+    Method to transfer between two accounts, checks the amount and the bankAccountNumber to make sure they exist. If not
+    it comes with error explaining the problem
+     */
+    public void transfer(String fromAccountNumber, String toAccountNumber, double amount) {
+        try {
+            BankAccount fromAccount = findAccount(fromAccountNumber);
+            BankAccount toAccount = findAccount(toAccountNumber);
+
+            if (amount <= 0) {
+                System.out.println("Error: Amount is invalid, must be greater than 0.");
+                return;
+            }
+
+            fromAccount.withdraw(amount);
+
+            toAccount.deposit(amount);
+
+            System.out.println("Successfully transferred " + amount + " from " + fromAccountNumber + " to " + toAccountNumber);
+            System.out.println("Senders current balance: " + fromAccount.getBalance());
+            System.out.println("Receivers current balance: " + toAccount.getBalance());
+        } catch (AccountNotFoundException e) {
+            System.out.println(e.getMessage());
+        } catch (InsufficientFundsException e) {
+            System.out.println(e.getMessage());
+        }
+    }
 }
 
